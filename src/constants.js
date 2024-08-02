@@ -1,0 +1,1 @@
+export const dataBaseName = "Azure Blob Storage";
