@@ -1,0 +1,33 @@
+# Package dependencies
+/node_modules
+
+# Package files
+/package.json
+/package-lock.json
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+out/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Testing
+coverage/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
