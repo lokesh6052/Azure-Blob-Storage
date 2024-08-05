@@ -2,7 +2,6 @@ import { BlobServiceClient } from "@azure/storage-blob";
 import fs from "fs";
 import path from "path";
 import mime from "mime-types";
-import { url } from "inspector";
 
 //Making connection to the Azure Blob Storage , through the Connection string
 const connectionString = process.env.AZURE_CONNECTION_STRING;
