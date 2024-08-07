@@ -12,12 +12,14 @@ app.use(
 );
 
 app.use(express.json({ limit: "20KB" }));
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static("public"));
 
 //Routes import section
+import userRouter from "./routes/user.routes.js";
 
 //Routes declaration section
+app.use("/api/v1/users", userRouter);
 
 export { app };

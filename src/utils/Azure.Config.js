@@ -46,11 +46,17 @@ const uploadToAzure = async (localFile) => {
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
     //-2nd step integrate the logic of uploading the files through block blob client path
-    const uploadBlobResponse = await blockBlobClient.uploadFile(localFile);
+    const options = { blobHTTPHeaders: { blobContentType: mimeType } };
+    const uploadBlobResponse = await blockBlobClient.uploadFile(
+      localFile,
+      options
+    );
     console.log(
       `Uploading the block blob file ${blobName} Successfully! - ✅`,
       uploadBlobResponse.requestId
     );
+
+    console.log("URL -> ", blockBlobClient.url);
 
     //-3rd step is Remove the Local file in the Temp folder
     fs.unlinkSync(localFile);
